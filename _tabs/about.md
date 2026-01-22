@@ -14,10 +14,10 @@ order: 4
 - **Artificial Intelligence**：PyTorch, Git, Machine Learning, Transformer, Large Language model, RAG, MCP, Agent
 
 ## 🚀 My Project
-- See 
+- See later...
 
 ## 📝 Internship/Work 
-- See
+- See later...
 
 ## 📫 Contact
 - 📧 Email: [2413969077@qq.com]
