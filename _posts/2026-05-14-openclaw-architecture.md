@@ -2,8 +2,9 @@
 title: OpenClaw架构
 date: 2026-05-14 12:00:00 +0800
 categories: [Agent]
-tags: [OpenClaw，Agent]
+tags: [OpenClaw]
 toc: true
+layout: post
 ---
 
 # OpenClaw是什么
@@ -21,14 +22,14 @@ toc: true
 
 但是OpenClaw也不是魔法。它的本质也可以说是是Harness Engineering一种体现—给大模型这个大脑装上的一副手脚架和方向盘，让大模型的能力能够更好的发挥。接下来，我们先从OpenClaw的架构谈起，看看OpenClaw长什么样。
 我们先给出OpenClaw的一个大致框架图：
-![image-20260514102211964](D:\Typora\imgs\image-20260514102211964.png)
+
 
 大致来说，我们在CLI/WebChat UI/飞书等消息通道发送消息，消息被传入到Gatway进行分发，之后分发到合适的Agent进行处理，Agent可以操作设备上的工具来进行处理，之后将最终结果/需用户确认的提示返回给用户进行进一步处理或者结束。因此，整个架构我们需要重点了解的是Gateway和Agent Runtime。
 
 ## 控制平面-Gateway
 
 Gateway（控制平面）可以理解成OpenClaw的前台，它是连接消息通道和后端Agent系统的中心枢纽。任何消息都必须要经过Gateway的检查和分发才能进入特定的Agent中进行处理。就像一个公司要经过了大门口安检的检查才能进入公司的某些特定区域一样。Gateway是所有消息进和出的唯一通道。
-![image-20260514104147808](D:\Typora\imgs\image-20260514104147808.png)
+
 
 Gateway默认跑在本机127.0.0.1:18789端口上，所有的客户端和Agent Runtime都以客户端的身份回连。每条消息通过**通道适配器**传入Gateway之后，Gateway主要做这五件事：**消息格式转换、路由、鉴权/权限控制、广播、断点恢复**。
 
