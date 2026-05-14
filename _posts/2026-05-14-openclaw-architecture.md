@@ -68,10 +68,10 @@ OpenClaw中定义了一个 **Protocol（协议）** — **`ChannelPlugin`** 来�
 | `sender_id`       | `"ou_a1b2c3..."` / `"wxid..."`               | 发送者在该渠道里的 ID（原样，不跨渠道映射）              |
 | `conversation_id` | `"oc_xxxxx"` / `"wxid_room"`                 | 会话 ID — Runtime 用它隔离上下文 / 记忆                  |
 | `text`            | `"帮我建个文档"`                              | 纯文本内容（渠道负责把富文本 / 卡片解平）                |
-| `attachments`     | `[{kind, url, ...}, ...]`                    | 图片 / 文件 / 语音 — 统一格式                            |
+| `attachments`     | `[\{kind, url, ...\}, ...]`                    | 图片 / 文件 / 语音 — 统一格式                            |
 | `thread_id`       | `"thr_xxx"`                                  | 可选 — 如果这条消息属于某个 thread                       |
 | `chat_type`       | `"dm"`                                       | 私聊 / 群聊 / 频道 — 让 Runtime 判断要不要 @ 前缀等      |
-| `raw`             | `{ ... 渠道原始 payload ... }`                | 保底逃生口                                               |
+| `raw`             | `\{ ... 渠道原始 payload ... \}`               | 保底逃生口                                               |
 
 **`OutboundMessage`**
 
@@ -80,7 +80,7 @@ OpenClaw中定义了一个 **Protocol（协议）** — **`ChannelPlugin`** 来�
 | `text`         | `"已建好，文档地址：..."`   | 回复的纯文本内容                             |
 | `media_urls`   | `[ url1, url2, ... ]`     | 要附带的图片 / 文件链接列表                  |
 | `reply_to_id`  | `"msg_xxx"`               | 可选，引用回复某条消息（仅支持的渠道生效）   |
-| `channel_data` | `{ "card": {...} }`       | 渠道特有扩展数据，比如飞书卡片、Slack Blocks |
+| `channel_data` | `\{ "card": \{...\} \}`       | 渠道特有扩展数据，比如飞书卡片、Slack Blocks |
 
 #### 加入一个新平台
 
