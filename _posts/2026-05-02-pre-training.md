@@ -1,8 +1,8 @@
 ---
 title: 大模型训练之—大模型预训练
 date: 2026-05-02 12:00:00 +0800
-categories: [Pre-training]
-tags: [Pre-training]
+categories: [llm]
+tags: [llm]
 toc: true
 layout: post
 math: true
