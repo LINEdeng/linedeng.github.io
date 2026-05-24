@@ -511,23 +511,20 @@ Loss突然暴涨
 
 ### 5.1 Kaplan Scaling Laws（OpenAI, 2020）
 
-$$
-L(N) \propto N^{-0.076}
-$$
+$ L(N) \propto N^{-0.076} $
 
 模型越大性能越好，但收益递减。
 **问题**：让行业过度追求"堆参数"，做出了175B但只训300B tokens的GPT-3。
 
 ### 5.2 Chinchilla Scaling Laws（DeepMind, 2022）— 重大修正
 
-$$
-L(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}}
-$$
+$$ L(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}} $$
 
 其中 α ≈ 0.34, β ≈ 0.28
 
 **核心结论：模型规模和数据规模应同步增长**
-$$N_{opt} \propto C^{0.5}, \quad D_{opt} \propto C^{0.5}$$
+
+$$ N_{opt} \propto C^{0.5}, \quad D_{opt} \propto C^{0.5} $$
 
 - 每个参数配约20个tokens（D ≈ 20N）才是计算最优
 - Chinchilla 70B + 1.4T tokens 打败 Gopher 280B + 300B tokens
