@@ -5,6 +5,7 @@ categories: [Pre-training]
 tags: [Pre-training]
 toc: true
 layout: post
+math: true
 ---
 
 # 大模型预训练流程全景
@@ -511,7 +512,7 @@ Loss突然暴涨
 
 ### 5.1 Kaplan Scaling Laws（OpenAI, 2020）
 
-$ L(N) \propto N^{-0.076} $
+$$ L(N) \propto N^{-0.076} $$
 
 模型越大性能越好，但收益递减。
 **问题**：让行业过度追求"堆参数"，做出了175B但只训300B tokens的GPT-3。
